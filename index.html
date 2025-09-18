@@ -1,39 +1,71 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Teste Cantina</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Variáveis - JavaScript</title>
+  <!-- Link para o arquivo CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bem-vindo à Cantina da Escola</h1>
-    <p id="resultado"></p>
+  <div class="container">
+    <header>
+      <h1>Bem-vindo à Cantina da Escola</h1>
+      <p>Teste de variáveis: var, let e const</p>
+    </header>
 
-    <script>
-        var nomeCantina = "Cantina da Escola";
-        console.log("Bem-vindo à " + nomeCantina);
+    <section class="resultado">
+      <h2>Resultados dos Testes</h2>
+      <div id="output"></div>
+    </section>
+  </div>
 
-        let salgados = 20;
-        console.log("Temos " + salgados + " salgados disponíveis.");
+  <!-- Script JavaScript -->
+  <script>
+    // Código JavaScript aqui
+    var nomeCantina = "Cantina da Escola";
+    let salgados = 20;
+    const precoSalgado = 5;
 
-        const precoSalgado = 5;
-        console.log("Cada salgado custa R$" + precoSalgado);
+    let output = '';
 
-        salgados = salgados - 5;
-        let totalVendido = 5 * precoSalgado;
+    output += `<p>Bem-vindo à ${nomeCantina}</p>`;
+    output += `<p>Temos ${salgados} salgados disponíveis.</p>`;
+    output += `<p>Cada salgado custa R$${precoSalgado}</p>`;
 
-        console.log("Agora restam " + salgados + " salgados.");
-        console.log("A cantina vendeu R$" + totalVendido);
+    // Atualizando os valores
+    salgados -= 5;
+    let totalVendido = 5 * precoSalgado;
+    
+    output += `<p>Agora restam ${salgados} salgados.</p>`;
+    output += `<p>A cantina vendeu R$${totalVendido} em salgados.</p>`;
 
-        if (true) {
-            var testeVar = "Sou var";
-            let testeLet = "Sou let";
-            console.log(testeVar); // funciona
-            console.log(testeLet); // funciona
-        }
+    // Tentativa de alterar o precoSalgado
+    try {
+      precoSalgado = 6; // Teste para ver o erro
+    } catch (e) {
+      output += `<p><strong>Erro:</strong> Não é possível alterar o valor de precoSalgado.</p>`;
+    }
 
-        console.log(testeVar); // funciona
-        // console.log(testeLet); // causaria erro, descomente para testar
-    </script>
+    // Testando var e let
+    if (true) {
+      var testeVar = "Sou var";
+      let testeLet = "Sou let";
+      output += `<p>${testeVar}</p>`; // Funciona
+      output += `<p>${testeLet}</p>`; // Funciona
+    }
+
+    // Exibindo as variáveis fora do bloco
+    output += `<p>${testeVar}</p>`; // Funciona
+
+    try {
+      output += `<p>${testeLet}</p>`; // ERRO, let tem escopo de bloco
+    } catch (e) {
+      output += `<p><strong>Erro:</strong> Não é possível acessar testeLet fora do bloco.</p>`;
+    }
+
+    // Colocando o resultado no HTML
+    document.getElementById("output").innerHTML = output;
+  </script>
 </body>
 </html>
-

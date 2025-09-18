@@ -1,8 +1,6 @@
-//Passo 1 – Declarando variáveis
-
-//Use para declarar o nome da cantina.
-var lanche diario gratuito = "Cantina da Escola";
-console.log("Bem-vindo à " + lanche diario gratuito);
+// Declaração das variáveis
+var nomeCantina = "Cantina da Escola";
+console.log("Bem-vindo à " + nomeCantina);
 
 let salgados = 20;
 console.log("Temos " + salgados + " salgados disponíveis.");
@@ -10,20 +8,22 @@ console.log("Temos " + salgados + " salgados disponíveis.");
 const precoSalgado = 5;
 console.log("Cada salgado custa R$" + precoSalgado);
 
-salgados = salgados - 5;  // Atualiza a quantidade de salgados
-let totalVendido = 5 * precoSalgado;  // Calcula o valor total da venda
+// Atualizando a quantidade de salgados
+salgados = salgados - 5;
+let totalVendido = 5 * precoSalgado;
 
 console.log("Agora restam " + salgados + " salgados.");
 console.log("A cantina vendeu R$" + totalVendido);
 
-precoSalgado = 6;  // Vai gerar um erro, porque `precoSalgado` é uma constante
+// Testando o erro com const
+precoSalgado = 6; // Isso causará um erro, pois não podemos alterar o valor de uma variável const.
 
 if (true) {
-  var testeVar = "Sou var";  // `var` tem escopo global
-  let testeLet = "Sou let";  // `let` tem escopo de bloco
-  console.log(testeVar); // Funciona, pois `var` é acessível fora do bloco
-  console.log(testeLet); // Funciona dentro do bloco, pois `let` tem escopo de bloco
+  var testeVar = "Sou var"; 
+  let testeLet = "Sou let"; 
+  console.log(testeVar); // Funciona, pois var tem escopo global
+  console.log(testeLet); // Funciona, pois let tem escopo de bloco
 }
 
-console.log(testeVar); // Funciona, `var` é global, então está disponível fora do bloco
-console.log(testeLet); // ERRO, `let` tem escopo de bloco e não é acessível fora dele
+console.log(testeVar); // Funciona, pois var é global (escopo de função ou global)
+console.log(testeLet); // ERRO, porque let tem escopo de bloco
