@@ -1,1 +1,41 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+p#resultado {
+  font-size: 1.2em;
+  color: #27ae60;
+  margin-top: 15px;
+}
+
+/* Estilo para o console no corpo da página */
+.console-log {
+  background-color: #222;
+  color: #eee;
+  font-family: monospace;
+  padding: 15px;
+  margin-top: 25px;
+  border-radius: 8px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-wrap;
+}
