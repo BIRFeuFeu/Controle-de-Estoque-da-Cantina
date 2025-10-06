@@ -1,71 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste de Variáveis - JavaScript</title>
-  <!-- Link para o arquivo CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Bem-vindo à Cantina da Escola</h1>
-      <p>Teste de variáveis: var, let e const</p>
-    </header>
+// Passo 1 – Declarando variáveis
 
-    <section class="resultado">
-      <h2>Resultados dos Testes</h2>
-      <div id="output"></div>
-    </section>
-  </div>
+// var: escopo global ou de função
+var nomeCantina = "Cantina da Escola";
+console.log("Bem-vindo à " + nomeCantina);
 
-  <!-- Script JavaScript -->
-  <script>
-    // Código JavaScript aqui
-    var nomeCantina = "Cantina da Escola";
-    let salgados = 20;
-    const precoSalgado = 5;
+// let: escopo de bloco, valor pode mudar
+let salgados = 20;
+console.log("Temos " + salgados + " salgados disponíveis.");
 
-    let output = '';
+// const: valor fixo, não pode ser alterado
+const precoSalgado = 5;
+console.log("Cada salgado custa R$" + precoSalgado);
 
-    output += `<p>Bem-vindo à ${nomeCantina}</p>`;
-    output += `<p>Temos ${salgados} salgados disponíveis.</p>`;
-    output += `<p>Cada salgado custa R$${precoSalgado}</p>`;
+// Passo 2 – Atualizando valores
 
-    // Atualizando os valores
-    salgados -= 5;
-    let totalVendido = 5 * precoSalgado;
-    
-    output += `<p>Agora restam ${salgados} salgados.</p>`;
-    output += `<p>A cantina vendeu R$${totalVendido} em salgados.</p>`;
+// Vendemos 5 salgados
+salgados = salgados - 5;
+let totalVendido = 5 * precoSalgado;
 
-    // Tentativa de alterar o precoSalgado
-    try {
-      precoSalgado = 6; // Teste para ver o erro
-    } catch (e) {
-      output += `<p><strong>Erro:</strong> Não é possível alterar o valor de precoSalgado.</p>`;
-    }
+console.log("Agora restam " + salgados + " salgados.");
+console.log("A cantina vendeu R$" + totalVendido);
 
-    // Testando var e let
-    if (true) {
-      var testeVar = "Sou var";
-      let testeLet = "Sou let";
-      output += `<p>${testeVar}</p>`; // Funciona
-      output += `<p>${testeLet}</p>`; // Funciona
-    }
+// Passo 3 – Teste rápido
 
-    // Exibindo as variáveis fora do bloco
-    output += `<p>${testeVar}</p>`; // Funciona
+// Teste de alteração de const
+try {
+  precoSalgado = 6; // Vai gerar erro
+} catch (erro) {
+  console.log("Erro ao tentar alterar precoSalgado: " + erro.message);
+}
 
-    try {
-      output += `<p>${testeLet}</p>`; // ERRO, let tem escopo de bloco
-    } catch (e) {
-      output += `<p><strong>Erro:</strong> Não é possível acessar testeLet fora do bloco.</p>`;
-    }
+// Teste de escopo com var e let
+if (true) {
+  var testeVar = "Sou var";
+  let testeLet = "Sou let";
+  console.log(testeVar); // funciona
+  console.log(testeLet); // funciona
+}
 
-    // Colocando o resultado no HTML
-    document.getElementById("output").innerHTML = output;
-  </script>
-</body>
-</html>
+console.log(testeVar); // funciona (var é global ou de função)
+try {
+  console.log(testeLet); // ERRO (let é de bloco)
+} catch (erro) {
+  console.log("Erro ao acessar testeLet fora do bloco: " + erro.message);
+}
