@@ -1,46 +1,25 @@
-// Passo 1 – Declarando variáveis
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Var, Let e Const</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; color: #333; padding: 20px; }
+        h1 { color: #0056b3; }
+        p { font-size: 1.2em; }
+        code { background-color: #e0e0e0; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Exercício: Praticando Var, Let e Const</h1>
+    <p>
+        Abra o console do navegador para ver os resultados do script.
+    </p>
+    <p>
+        (Normalmente, você pode fazer isso pressionando a tecla <b>F12</b> ou <b>Ctrl+Shift+I</b> e clicando na aba "Console").
+    </p>
 
-// var: escopo global ou de função
-var nomeCantina = "Cantina da Escola";
-console.log("Bem-vindo à " + nomeCantina);
-
-// let: escopo de bloco, valor pode mudar
-let salgados = 20;
-console.log("Temos " + salgados + " salgados disponíveis.");
-
-// const: valor fixo, não pode ser alterado
-const precoSalgado = 5;
-console.log("Cada salgado custa R$" + precoSalgado);
-
-// Passo 2 – Atualizando valores
-
-// Vendemos 5 salgados
-salgados = salgados - 5;
-let totalVendido = 5 * precoSalgado;
-
-console.log("Agora restam " + salgados + " salgados.");
-console.log("A cantina vendeu R$" + totalVendido);
-
-// Passo 3 – Teste rápido
-
-// Teste de alteração de const
-try {
-  precoSalgado = 6; // Vai gerar erro
-} catch (erro) {
-  console.log("Erro ao tentar alterar precoSalgado: " + erro.message);
-}
-
-// Teste de escopo com var e let
-if (true) {
-  var testeVar = "Sou var";
-  let testeLet = "Sou let";
-  console.log(testeVar); // funciona
-  console.log(testeLet); // funciona
-}
-
-console.log(testeVar); // funciona (var é global ou de função)
-try {
-  console.log(testeLet); // ERRO (let é de bloco)
-} catch (erro) {
-  console.log("Erro ao acessar testeLet fora do bloco: " + erro.message);
-  
+    <script src="script.js"></script>
+</body>
+</html>
